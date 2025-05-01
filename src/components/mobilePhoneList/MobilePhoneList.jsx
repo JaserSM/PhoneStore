@@ -8,6 +8,12 @@ function MobilePhoneList() {
   const [phones, setPhones] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const filteredPhones = phones.filter(phone =>
+    `${phone.brand} ${phone.model}`.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   const exTime = 60 * 60 * 1000; // 60 minutos
 
   const fetchPhones = async () => {
@@ -62,13 +68,27 @@ function MobilePhoneList() {
   if (error) return <div className="error">Error: {error}</div>;
 
   return (
-    <div className="phone-list-container">
-      <div className="phone-list">
-        {phones.map(phone => (
-          <MobilePhoneCard key={phone.id} phone={phone} />
-        ))}
+    <>
+      <nav>
+        <div className='navInputContainer'>
+          <input 
+            type="search" 
+            placeholder='Search phones ...' 
+            className='search' 
+            value={searchTerm} 
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+        </div>
+      </nav>
+      <div className="phone-list-container">      
+        <div className="phone-list">
+          {filteredPhones.map(phone => (
+            <MobilePhoneCard key={phone.id} phone={phone} />
+          ))}
+        </div>
       </div>
-    </div>
+    </>
+    
   );
 }
 
