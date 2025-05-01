@@ -1,11 +1,18 @@
+import { useNavigate } from 'react-router';
 import './MobilePhoneCard.css';
 import React from "react";
 
 const MobilePhoneCard = ({ phone }) => {
   if (!phone) return <div>No se encontró información del teléfono</div>;
+  const navigate = useNavigate();
+
+  const handlePhoneClick = () => {
+    console.log("click");
+    navigate(`/phone/${phone.id}`, { state: { phoneData: phone } });
+  };
 
   return (
-    <div className="mobilePhoneCard">
+    <div className="mobilePhoneCard" onClick={handlePhoneClick}>
       <div className="phoneHeader">
         <h2>{phone.brand} {phone.model}</h2>
         <span className="price">{phone.price.toFixed(2)}€</span>

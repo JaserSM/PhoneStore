@@ -4,7 +4,6 @@ import { getMobilePhones } from '../../services/api';
 import MobilePhoneCard from '../mobilePhoneCard/MobilePhoneCard';
 
 
-
 function MobilePhoneList() {
   const [phones, setPhones] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -24,6 +23,8 @@ function MobilePhoneList() {
 
     fetchPhones();
   }, []);
+
+  
 
   if (loading) return <div className="loading">Cargando...</div>;
   if (error) return <div className="error">Error: {error}</div>;
