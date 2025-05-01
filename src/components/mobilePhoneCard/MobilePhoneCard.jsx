@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router';
 import './MobilePhoneCard.css';
 import React from "react";
+import Carousel from '../carousel/carousel';
 
 const MobilePhoneCard = ({ phone }) => {
   if (!phone) return <div>No se encontró información del teléfono</div>;
@@ -12,21 +13,15 @@ const MobilePhoneCard = ({ phone }) => {
   };
 
   return (
-    <div className="mobilePhoneCard" onClick={handlePhoneClick}>
-      <div className="phoneHeader">
+    <div className="mobilePhoneCard">
+      <div className="phoneHeader" onClick={handlePhoneClick}>
         <h2>{phone.brand} {phone.model}</h2>
         <span className="price">{phone.price.toFixed(2)}€</span>
       </div>
         {
         phone.images.length > 0 && 
         <div  className='imagesContainerCard'>
-          <ul>
-            {phone.images.map(image => 
-              <li key={image.id}>
-                <img src={`http://localhost:8080/api/images/${phone.id}/${image.filePath}`} alt={`Phone image ${image.id}`} className='phoneImage'/>
-              </li>
-            )}
-          </ul>
+          <Carousel imagesPath={phone.images.map(image => `${phone.id}/${image.filePath}`)} phone={phone}/>
         </div>
         }
     </div>
