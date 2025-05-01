@@ -1,0 +1,46 @@
+.mobilePhoneCard {
+  font-size: 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 15px;
+  height: 380px;
+  max-width: 380px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.phoneHeader {
+  max-height: 40%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.phoneHeader h2 {
+  margin: 0;
+  color: #333;
+}
+
+.imagesContainerCard{
+  max-width: 100%;
+  overflow: hidden;
+}
+.mobilePhoneCard ul{
+  padding: 0;
+}
+.imagesContainerCard li{
+  
+  list-style: none;
+}
+.phoneImage{
+  border-radius: 12px;
+  width: 100%;
+  height: auto;
+}

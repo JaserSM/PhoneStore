@@ -1,0 +1,68 @@
+.mobile-phone-card {
+  font-size: 14px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 15px;
+  max-width: 420px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+.phone-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.phone-header h2 {
+  margin: 0;
+  color: #333;
+}
+
+.price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #2e7d32;
+}
+
+.phone-specs {
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.spec-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.spec-label {
+  font-weight: 600;
+  color: #555;
+}
+
+.spec-value {
+  color: #333;
+}
+
+.imagesContainer{
+  height: 180px;
+  overflow: hidden;
+}
+.mobile-phone-card ul{
+  padding: 0;
+}
+.imagesContainer li{
+  
+  list-style: none;
+}
+.phoneImage{
+  border-radius: 12px;
+  width: 100%;
+  height: auto;
+}

@@ -1,0 +1,23 @@
+header {
+  margin-left: 26px;
+  margin-right: 26px;
+  border-radius: 10px;
+  margin-bottom: 40px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  padding-left: 30px;
+  background-color: #ffffff;
+}
+header h1{
+  text-align: left;
+  font-size: 40px;
+  margin: 0px;
+  margin-bottom: 8px;
+}
+header h2{
+  font-weight: lighter;
+  text-align: left;
+  font-size: 20px;
+  margin: 0px;
+}
