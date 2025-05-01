@@ -3,7 +3,7 @@ import './MobilePhone.css';
 
 const MobilePhone = ( phoneData ) => {
   const data = phoneData.phoneData;
-  console.log(data)
+
   return (
     <div className="mobile-phone-card">
       <div className="phone-header">

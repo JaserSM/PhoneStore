@@ -8,20 +8,52 @@ function MobilePhoneList() {
   const [phones, setPhones] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const exTime = 60 * 60 * 1000; // 60 minutos
+
+  const fetchPhones = async () => {
+    try {
+      const data = await getMobilePhones();
+      setPhones(data);
+      setDataWithExpiration("phoneList", data);
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  function setDataWithExpiration(key, data) {
+    const now = new Date();
+    const item = {
+      data: data,
+      expiration: now.getTime() + exTime,
+    };
+    localStorage.setItem(key, JSON.stringify(item));
+  }
+
+  function getDataWithExpiration(key) {
+    const itemStr = localStorage.getItem(key);
+    if (!itemStr) return null;
+  
+    const item = JSON.parse(itemStr);
+    const now = new Date();
+
+    if (now.getTime() > item.expiration) {
+      localStorage.removeItem(key);
+      return null;
+    }
+    return item.data;
+  }
 
   useEffect(() => {
-    const fetchPhones = async () => {
-      try {
-        const data = await getMobilePhones();
-        setPhones(data);
-      } catch (err) {
-        setError(err.message);
-      } finally {
-        setLoading(false);
-      }
-    };
+    const cachedData = getDataWithExpiration("phoneList");
 
-    fetchPhones();
+    if (cachedData) {
+      setPhones(cachedData);
+      setLoading(false);
+    } else {
+      fetchPhones();
+    }
   }, []);
 
   
