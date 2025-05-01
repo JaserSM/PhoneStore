@@ -1,0 +1,23 @@
+.phoneActionsCard {
+  font-size: 18px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 15px;
+  min-width: 390px;
+  width: 500px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+.actionLabelBlack{
+  color: black;
+}
+.actionLabel{
+  color: gray;
+}
+.buttonAddToCart button{
+  font-weight: lighter;
+  background-color: blue;
+  color: whitesmoke;
+}

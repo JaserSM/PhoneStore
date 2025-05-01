@@ -3,6 +3,8 @@ import Layout from "../../components/layout/layout";
 import MobilePhone from "../../components/mobilePhone/MobilePhone";
 import React, { useEffect, useState } from "react";
 import { getMobilePhoneById } from "../../services/api";
+import "./PhoneDetail.css";
+import MobilePhoneActions from "../../components/phoneActions/PhoneActions";
 
 const PhoneDetailPage = () => {
   const location = useLocation();
@@ -90,15 +92,19 @@ const PhoneDetailPage = () => {
 
   return (
     <Layout pageName="PhoneDetail" phone={phone}>
-      <div>
-      {
-        phone.imgUrl != "" && 
-        <div  className='imagesContainerCard'>
-          <img src={cachedImage || phone.imgUrl} alt={`Phone ${phone.brand} ${phone.model}`}/>
-        </div>
+      <div className="phoneDetailContainer">
+        {
+          phone.imgUrl != "" && 
+          <div  className='imageContainerCard'>
+            <img src={cachedImage || phone.imgUrl} alt={`Phone ${phone.brand} ${phone.model}`}/>
+          </div>
         }
+        <div>
+          <MobilePhone phoneData={ phoneData } />
+          <MobilePhoneActions phoneData={ phoneData }/>
+        </div>
       </div>
-      <MobilePhone phoneData={ phoneData } />
+      
     </Layout>
   );
 };
