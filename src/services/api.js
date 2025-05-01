@@ -1,9 +1,9 @@
 // src/services/api.js
-const API_BASE_URL = 'http://localhost:8080/api/phones';
+const API_BASE_URL = 'https://itx-frontend-test.onrender.com/api/';
 
 
 export const getMobilePhones = async () => {
-  const response = await fetch(API_BASE_URL, {
+  const response = await fetch(API_BASE_URL + "product", {
     method: 'GET'
   });
   if (!response.ok) {
@@ -13,15 +13,15 @@ export const getMobilePhones = async () => {
 };
 
 export const getMobilePhoneById = async (id) => {
-  const response = await fetch(`${API_BASE_URL}/${id}`);
+  const response = await fetch(`${API_BASE_URL}product/${id}`);
   if (!response.ok) {
     throw new Error('Error al obtener el teléfono');
   }
   return await response.json();
 };
 
-export const createMobilePhone = async (phoneData) => {
-  const response = await fetch(API_BASE_URL, {
+export const addPhoneToCart = async (phoneData) => {
+  const response = await fetch(API_BASE_URL + "cart", {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

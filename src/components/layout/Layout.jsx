@@ -16,7 +16,7 @@ const Layout = ({ children, search }) => {
     <div className="App">
       <header onClick={handleHeaderClick}>
         <h1>{">"} Phone Store </h1>
-        <h2>{">"} &nbsp; Tu tienda de teléfonos online </h2>
+        <h2>{">"} &nbsp; Tu tienda de tecnología online </h2>
       </header>
       {search && <Search/>}
       <main>{children}</main>
