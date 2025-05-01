@@ -63,7 +63,7 @@ const MobilePhoneCard = ({ phone }) => {
     <div className="mobilePhoneCard" onClick={handlePhoneClick}>
       <div className="phoneHeader" >
         <h2>{phone.brand}</h2>
-        <h3>{phone.model}</h3> 
+        <h3 className="phoneHeader__model">{phone.model}</h3> 
         <span className="price">{phone.price}€</span>
       </div>
         {

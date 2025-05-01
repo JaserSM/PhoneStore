@@ -89,7 +89,7 @@ const PhoneDetailPage = () => {
   if (error) return <div className="error">Error: {error}</div>;
 
   return (
-    <Layout pageName="PhoneDetail">
+    <Layout pageName="PhoneDetail" phone={phone}>
       <div>
       {
         phone.imgUrl != "" && 
