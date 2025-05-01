@@ -18,6 +18,10 @@
 }
 .buttonAddToCart button{
   font-weight: lighter;
-  background-color: blue;
+  background-color: rgb(90, 90, 225);
   color: whitesmoke;
+}
+.buttonAddToCart button:hover{
+  scale: 1.04;
+  background-color: rgb(70, 70, 243);
 }

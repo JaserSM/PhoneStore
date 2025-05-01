@@ -7,6 +7,7 @@ header {
   padding: 20px;
   padding-left: 30px;
   cursor: pointer;
+  display: flex;
 }
 header:hover {
   color: #3a146f;
@@ -25,6 +26,16 @@ header h2{
   font-size: 16px;
   margin: 0px;
   color: rgb(98, 98, 98);
+}
+.headerTitle{
+width: 100%;
+}
+.headerCart{
+  align-self: center;
+  width: 50px;
+  color: rgb(222, 10, 31);
+  font-size: 20px;
+  font-weight: bold;
 }
 .breadcrumbs{
   color: rgb(133, 133, 133);

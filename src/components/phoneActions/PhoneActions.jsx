@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './PhoneActions.css';
 import OptionsAction from '../optionsAction/OptionsAction';
+import { addPhoneToCart } from '../../services/api';
 
 const MobilePhoneActions = ( {phoneData} ) => {
 
@@ -35,6 +36,20 @@ const MobilePhoneActions = ( {phoneData} ) => {
     setStorage(code);
   }
 
+  async function addToCart() {
+    console.log("click");
+    if(color == 0 || storage == 0){
+      return
+    }
+    const phoneDataToCart = { id : phoneData.id, colorCode: color, storageCode: storage}
+    try {
+      const cartPhones = await addPhoneToCart(phoneDataToCart);
+      localStorage.setItem("cartPhones", cartPhones.count);
+    } catch (err) {
+      console.log(err);
+    } 
+  }
+
   return (
     <>
     <div className="phoneActionsCard">   
@@ -54,7 +69,7 @@ const MobilePhoneActions = ( {phoneData} ) => {
       </div>
     </div>
     <div className="buttonAddToCart">
-      <button>Add to cart</button>
+      <button onClick={addToCart}>Add to cart</button>
     </div>
     </>
   );
