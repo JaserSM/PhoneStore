@@ -13,6 +13,11 @@
   margin: auto;
   cursor: pointer;
 }
+.mobilePhoneCard:hover {
+  border: 1px solid #6200ea2d;
+  box-shadow: 0 0 18px rgba(98, 0, 234, 0.112);
+  transform: scale(1.015);
+}
 
 .phoneHeader {
   max-height: 40%;
