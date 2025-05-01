@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router";
 import Search from "../search/Search";
 import React from "react";
+import "./Layout.css";
 
 
 const Layout = ({ children, search }) => {
