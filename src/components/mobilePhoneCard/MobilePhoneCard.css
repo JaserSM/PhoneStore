@@ -3,7 +3,8 @@
   border: 1px solid #e0e0e0;
   border-radius: 8px;
   padding: 20px;
-  height: 380px;
+  height: 300px;
+  min-width: 300px;
   max-width: 380px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   background-color: white;
@@ -33,7 +34,9 @@
   margin: 0;
   color: #333;
 }
-
+.phoneHeader__model{
+  color: #636363;
+}
 .imagesContainerCard{
   max-width: 100%;
   overflow: hidden;
